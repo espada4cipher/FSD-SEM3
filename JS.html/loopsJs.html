@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in js</title>
+</head>
+<body>
+    <script>
+        //javascript provides several types of loops to perform repetitive tasks. The most commonly used loops in JavaScript are:
+        //for..........best used when the number of iterations is known beforehand.
+        let studentList=["Kartik","Rohit","Suresh","Anjali"];
+        for(let i=0;i<studentList.length;i++){
+            console.log(studentList[i]);
+        }
+        //while----best used when the number of iterations is not known beforehand and the loop needs to continue until a certain condition is met.
+        let x=0;
+        while(x<studentList.length){
+            console.log(studentList[x]);
+            x++;
+        }
+        //for..of loop
+        // Iterates over the values of an iterable object, such as an array or a string.
+        for(let y of studentList){
+            console.log(y);
+        }
+        let myself={name:"Kartik",age:19,city:"Lucknow"};
+        for(let z in myself){
+            console.log(z);
+        }
+                
+    </script>
+</body>
+</html>
