@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiggy Clone - Food Delivery</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#ffffff;
+}
+
+/* Header */
+header{
+    background:#fc3f00;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Hero Section */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background:#fff5f2;
+}
+
+.hero h1{
+    font-size:50px;
+    color:#fc3f00;
+}
+
+.hero p{
+    margin:15px 0;
+    font-size:20px;
+}
+
+.hero button{
+    background:#fc3f00;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.hero button:hover{
+    background:#d93400;
+}
+
+/* Food Section */
+.foods{
+    padding:50px;
+}
+
+.foods h2{
+    text-align:center;
+    color:#fc3f00;
+    margin-bottom:30px;
+}
+
+.food-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.food-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+}
+
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-card h3{
+    margin:10px;
+}
+
+.food-card p{
+    color:#fc3f00;
+    font-weight:bold;
+    margin:10px;
+}
+
+.food-card button{
+    margin:10px;
+    padding:10px 15px;
+    background:#fc3f00;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.food-card button:hover{
+    background:#d93400;
+}
+
+/* Cart */
+.cart{
+    background:#fff5f2;
+    padding:40px;
+}
+
+.cart h2{
+    color:#fc3f00;
+    margin-bottom:15px;
+}
+
+#cart-items li{
+    margin:8px 0;
+}
+
+.total{
+    margin-top:15px;
+    font-size:22px;
+    color:#fc3f00;
+    font-weight:bold;
+}
+
+/* Footer */
+footer{
+    background:#fc3f00;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🍔 Swiggy Clone</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#foods">Foods</a>
+        <a href="#cart">Cart</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Order Food Online</h1>
+    <p>Delicious food delivered to your doorstep</p>
+    <button onclick="scrollToFoods()">Order Now</button>
+</section>
+
+<section class="foods" id="foods">
+    <h2>Popular Dishes</h2>
+
+    <div class="food-container">
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="">
+            <h3>Cheese Burger</h3>
+            <p>₹199</p>
+            <button onclick="addToCart('Cheese Burger',199)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="">
+            <h3>Pizza</h3>
+            <p>₹299</p>
+            <button onclick="addToCart('Pizza',299)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600" alt="">
+            <h3>Chicken Biryani</h3>
+            <p>₹249</p>
+            <button onclick="addToCart('Chicken Biryani',249)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="">
+            <h3>Healthy Salad</h3>
+            <p>₹149</p>
+            <button onclick="addToCart('Healthy Salad',149)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1604908554167-6d7b2b5c31e0?w=600" alt="">
+            <h3>French Fries</h3>
+            <p>₹99</p>
+            <button onclick="addToCart('French Fries',99)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600" alt="">
+            <h3>Sandwich</h3>
+            <p>₹129</p>
+            <button onclick="addToCart('Sandwich',129)">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="cart" id="cart">
+    <h2>🛒 Your Cart</h2>
+
+    <ul id="cart-items"></ul>
+
+    <div class="total">
+        Total: ₹<span id="total">0</span>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Swiggy Clone | College Project</p>
+</footer>
+
+<script>
+let total = 0;
+
+function addToCart(item, price)
+{
+    let cartItems = document.getElementById("cart-items");
+
+    let li = document.createElement("li");
+    li.innerHTML = item + " - ₹" + price;
+
+    cartItems.appendChild(li);
+
+    total += price;
+
+    document.getElementById("total").innerText = total;
+}
+
+function scrollToFoods()
+{
+    document.getElementById("foods")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+}
+</script>
+
+</body>
+</html>
